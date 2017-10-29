@@ -86,6 +86,7 @@ const config = {
     // Used for hidden the extensions at moment of import
   },
 
+  // source-map :
   devtool: dev ? "cheap-module-eval-source-map" : false,
 
   plugins: [
