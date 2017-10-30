@@ -22,4 +22,5 @@ yarn-error.log*
 
 .idea/
 dist/
+images/
 *.min.*

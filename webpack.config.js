@@ -81,6 +81,34 @@ const config = {
         test: /\.scss?$/,
         use: ExtractTextPlugin.extract({fallback: "style-loader", use: [...cssLoaders, 'sass-loader']})
         // use: [...cssLoaders, 'sass-loader'] // Without ExtractTextPlugin
+      },
+
+      // fonts :
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'file-loader',
+      },
+
+      // Images :
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [
+          {
+            // image loader :
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              name: '[name].[hash:7].[ext]'
+            }
+          },
+          {
+            // image optimizer :
+            loader: 'img-loader',
+            options: {
+              enabled: !dev
+            }
+          }
+        ]
       }
     ],
   },
@@ -88,6 +116,12 @@ const config = {
   resolve: {
     extensions: [".js", ".json", ".jsx", ".css"],
     // Used for hidden the extensions at moment of import
+
+    alias: {
+      '@css': path.resolve('./app/css/'),
+      '@image': path.resolve('./app/images/'),
+      // ...
+    }
   },
 
   // source-map :
