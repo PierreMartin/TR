@@ -35,14 +35,20 @@ const config = {
   watch: dev,
 
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "public/assets"),
     // the target directory for all output files - must be an absolute path (use the Node.js path module)
 
     filename: dev ? "[name].js" : "[name].[chunkhash:8].js",
     // the filename template for entry chunks
 
-    publicPath: "/dist/",
+    publicPath: "/assets/",
     // the url to the output directory resolved relative to the HTML page
+  },
+
+  devServer: {
+    contentBase: path.join(__dirname, 'public'),
+    compress: true,
+    port: 3000
   },
 
   module: {
