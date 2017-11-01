@@ -49,10 +49,11 @@ const config = {
     rules: [
       // JS
       {
+        enforce: 'pre', // 'pre' : force to run first
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
+          loader: 'eslint-loader', // babel-loader
           // options are usualy in .babelrc :
           /*
           options: {
