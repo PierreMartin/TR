@@ -30,7 +30,7 @@ if (!dev) {
 
 const config = {
   entry: {
-    app: ['./app/css/bootstrap.min.css', './app/index.js']
+    app: ['./app/css/main.scss', './app/index.js']
   },
   watch: dev,
 
