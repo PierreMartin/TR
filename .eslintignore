@@ -1,0 +1,10 @@
+/compiled/**
+/public/**
+webpack.config.js
+karma.conf.js
+tests.webpack.js
+registerServiceWorker.js
+**/*.json
+**/*.less
+**/*.jpg
+**/*.png

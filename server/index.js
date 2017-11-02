@@ -1,6 +1,8 @@
 import express from 'express';
-const app = express();
+
 const App = require('../dist/app');
+
+const app = express();
 const ENV = process.env.NODE_ENV;
 
 app.set('port', (process.env.PORT || 3000));

@@ -1,13 +1,40 @@
 {
-  "extends": "airbnb",
-  "rules": {
-    "quotes": ["warn", "single"],
-    "comma-dangle": ["error", {
-      "arrays": "never",
-      "objects": "never",
-      "imports": "never",
-      "exports": "never",
-      "functions": "ignore"
-    }]
-  }
+	"parser": "babel-eslint",
+	"extends": "airbnb",
+	"plugins": [
+		"react"
+	],
+	"env": {
+		"browser": true,
+		"node": true
+	},
+	"rules":{
+		"quotes": ["warn", "single"],
+		"comma-dangle": ["error", {
+			"arrays": "never",
+			"objects": "never",
+			"imports": "never",
+			"exports": "never",
+			"functions": "ignore"
+		}],
+		"jsx-a11y/anchor-is-valid": [ "off", {
+			"components": [ "Link" ],
+			"specialLink": [ "hrefLeft", "hrefRight" ],
+			"aspects": [ "noHref", "invalidHref", "preferButton" ]
+		}],
+		"indent": [2, "tab", { "SwitchCase": 1, "VariableDeclarator": 1 }],
+		"no-tabs": 0,
+		"react/prop-types": 0,
+		"react/jsx-indent": [2, "tab"],
+		"react/jsx-indent-props": [2, "tab"],
+		"react/jsx-closing-bracket-location" : 0,
+		"object-curly-spacing" : 0,
+		"arrow-body-style": 0,
+		"no-console": 0,
+		"max-len": 0,
+		"prefer-template": 0,
+		"import/no-unresolved": 0,
+		"global-require": 0,
+		"no-underscore-dangle": 0
+	}
 }
