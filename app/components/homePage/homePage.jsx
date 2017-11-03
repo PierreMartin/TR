@@ -24,7 +24,7 @@ class HomePage extends React.Component {
 	}
 
 	handleChangeMessage(event) {
-		const textChange = event.target.value.trim();
+		const textChange = event.target.value;
 		this.setState({ textChange });
 		this.log('handleChangeMessage');
 	}
