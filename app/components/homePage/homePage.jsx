@@ -3,14 +3,65 @@ import React from 'react';
 import image from '@image/cat.jpg';
 import ModuleX from './moduleX/moduleX';
 
+class HomePage extends React.Component {
+	constructor(props) {
+		super(props);
+		this.handleChangeMessage = this.handleChangeMessage.bind(this);
+		this.handleSubmitMessage = this.handleSubmitMessage.bind(this);
 
-const HomePage = () => (
-	<div>
-		<h2>Home</h2>
-		<img src={image} alt="" />
-		<ModuleX test="jhjh j hjhkjkjk" />
-	</div>
-);
+		this.state = {
+			textChange: '',
+			text: ''
+		};
+	}
+
+	componentDidMount() {
+		// this.log('componentDidMount');
+	}
+
+	componentDidUpdate() {
+		this.log('componentDidUpdate');
+	}
+
+	handleChangeMessage(event) {
+		const textChange = event.target.value.trim();
+		this.setState({ textChange });
+		this.log('handleChangeMessage');
+	}
+
+	handleSubmitMessage(event) {
+		if (event.which === 13) {
+			event.preventDefault();
+
+			const text = event.target.value.trim();
+			this.setState({ text });
+			this.setState({ textChange: '' });
+			this.log('handleSubmitMessage');
+		}
+	}
+
+	log(componant) {
+		console.log(componant, this.state);
+	}
+
+	render() {
+		return (
+			<div>
+				<h1>Hello, world!</h1>
+				<img src={image} alt="cat" />
+
+				<ModuleX
+					placeholder="Write something here"
+					handleChangeMessage={this.handleChangeMessage}
+					handleSubmitMessage={this.handleSubmitMessage}
+					value={this.state.textChange}
+				/>
+				<p>{ this.state.text }</p>
+
+			</div>
+		);
+	}
+}
 
 /*
 HomePage.propTypes = {

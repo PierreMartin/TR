@@ -31,6 +31,8 @@
 		"react/jsx-first-prop-new-line": "off",
 		"react/jsx-max-props-per-line": "off",
 		"import/no-extraneous-dependencies": "off",
+		"object-curly-newline": "off",
+		"react/jsx-no-bind": "off",
 		"object-curly-spacing" : 0,
 		"arrow-body-style": 0,
 		"no-console": 0,

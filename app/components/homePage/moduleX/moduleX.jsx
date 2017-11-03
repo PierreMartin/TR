@@ -1,14 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ModuleX = ({ test }) => (
+const ModuleX = ({ placeholder, handleChangeMessage, handleSubmitMessage, value }) => (
 	<div>
-		<strong>{test}</strong>
+		<input
+			type="text"
+			onChange={handleChangeMessage}
+			onKeyDown={handleSubmitMessage}
+			value={value}
+			placeholder={placeholder}
+		/>
 	</div>
 );
 
 ModuleX.propTypes = {
-	test: PropTypes.string.isRequired
+	placeholder: PropTypes.string.isRequired,
+	handleChangeMessage: PropTypes.func.isRequired,
+	handleSubmitMessage: PropTypes.func.isRequired,
+	value: PropTypes.string.isRequired
 };
 
 export default ModuleX;
