@@ -3,4 +3,6 @@
 - Bootstrapped with Create React App
 - React-router
 - Webpack 3
-- Server rendering 
+- ESLint
+- webpack-dev-server + hot reloading
+- SASS + PostCSS
