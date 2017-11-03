@@ -54,28 +54,17 @@ const config = {
   module: {
     rules: [
       // JS
-      {
-        enforce: 'pre', // 'pre' : force to run first
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'eslint-loader', // babel-loader
-          // options are usualy in .babelrc :
-          /*
-          options: {
-            presets: ['env']
-          }
-          */
-        }
-      },
-
-      // JSX
-      {
-        test: /\.jsx?$/,
-        include: [path.resolve(__dirname, "app")],
-        exclude: [path.resolve(__dirname, "app/demo-files")],
-        loader: "babel-loader"
-      },
+			{
+				test: /\.(js|jsx)$/,
+				enforce: "pre",
+				exclude: /(node_modules|bower_components)/,
+				loader: "eslint-loader",
+			},
+			{
+				test: /\.(js|jsx)$/,
+				exclude: /(node_modules|bower_components)/,
+				loader: "babel-loader",
+			},
 
       // CSS + postCss + extract-text
       {
@@ -98,7 +87,7 @@ const config = {
 
       // Images :
       {
-        test: /\.(png|jpg|gif|svg)$/,
+				test: /\.(jpe?g|png|gif|svg)$/i,
         use: [
           {
             // image loader :
@@ -106,13 +95,6 @@ const config = {
             options: {
               limit: 8192,
               name: '[name].[hash:7].[ext]'
-            }
-          },
-          {
-            // image optimizer :
-            loader: 'img-loader',
-            options: {
-              enabled: !dev
             }
           }
         ]
@@ -149,8 +131,8 @@ if (!dev) {
   config.plugins.push(new ManifestPlugin());
 
   // Used for the unusable files in the folder's build :
-  config.plugins.push(new CleanWebpackPlugin(['dist'], {
-    root: path.resolve(__dirname, './'),
+  config.plugins.push(new CleanWebpackPlugin(['assets'], {
+    root: path.resolve(__dirname, './public'),
     verbose: true,
     dry: false
   }));

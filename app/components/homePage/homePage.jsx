@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import ModuleX from './moduleX/moduleX';
 import image from '@image/cat.jpg';
+import ModuleX from './moduleX/moduleX';
 
 
 const HomePage = () => (
