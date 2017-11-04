@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 // import './css/main.scss'; // load here but can be loaded in 'webpack.config.js' -> 'entry.app'
 // import AppDemo from './demo/App';
-import NavigationMain from './components/navigation/navigationMain';
+import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
 // Without routing :
@@ -14,14 +14,10 @@ ReactDOM.render(
 );
 */
 
-
 // With routing :
 ReactDOM.render(
 	<Router>
-		<div>
-			<NavigationMain />
-			<hr />
-		</div>
+		<App />
 	</Router>,
 	document.getElementById('root')
 );
